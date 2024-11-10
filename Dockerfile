@@ -1,0 +1,3 @@
+FROM oznu/homebridge:latest
+ENV HOMEBRIDGE_CONFIG_UI=1
+EXPOSE 8581
