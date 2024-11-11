@@ -1,9 +1,11 @@
-FROM oznu/homebridge:latest
-ENV HOMEBRIDGE_CONFIG_UI=1
+# ベースイメージとしてNode.js 20を使用
+FROM node:20
 
-RUN npm install -g --unsafe-perm homebridge-config-ui-x@latest \
-    && npm install -g --unsafe-perm @switchbot/homebridge-switchbot@latest
+# Homebridgeのインストール
+RUN npm install -g --unsafe-perm homebridge@latest homebridge-config-ui-x@latest @switchbot/homebridge-switchbot@latest
 
+# Homebridge UIのポートを公開
 EXPOSE 8581
 
+# Homebridgeの起動
 CMD ["homebridge", "-I"]
