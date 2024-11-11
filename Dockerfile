@@ -10,6 +10,10 @@ RUN apt-get update && apt-get install -y curl ca-certificates \
 RUN ln -sf /usr/local/bin/node /opt/homebridge/bin/node \
     && ln -sf /usr/local/bin/npm /opt/homebridge/bin/npm
 
+# 環境変数 PATH に /usr/local/bin を追加
+ENV PATH="/usr/local/bin:/opt/homebridge/bin/npm:$PATH"
+
+
 # Homebridge UIとSwitchBotプラグインのインストール
 RUN /opt/homebridge/bin/npm install -g --unsafe-perm homebridge-config-ui-x@latest @switchbot/homebridge-switchbot@latest
 
