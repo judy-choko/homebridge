@@ -15,7 +15,7 @@ ENV PATH="/usr/local/bin:/opt/homebridge/bin/npm:$PATH"
 
 
 # Homebridge UIとSwitchBotプラグインのインストール
-RUN /opt/homebridge/bin/npm install -g --unsafe-perm homebridge-config-ui-x@latest @switchbot/homebridge-switchbot@latest
+RUN npm install -g --unsafe-perm homebridge-config-ui-x@latest @switchbot/homebridge-switchbot@latest
 
 # Homebridge UIのポートを公開
 EXPOSE 8581
