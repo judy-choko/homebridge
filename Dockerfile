@@ -1,8 +1,9 @@
 # ベースイメージとして公式のHomebridgeイメージを使用
 FROM oznu/homebridge:latest
 
-# Node.jsをバージョン20に更新
-RUN apt-get update && apt-get install -y curl \
+# 必要なパッケージのインストールとNode.jsのバージョンを更新
+RUN apt-get update && apt-get install -y curl ca-certificates \
+    && update-ca-certificates \
     && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && apt-get install -y nodejs \
     && npm install -g n && n 20
