@@ -1,5 +1,5 @@
 # ベースイメージとして公式のHomebridgeイメージを使用
-FROM oznu/homebridge:latest
+FROM homebridge/homebridge:latest
 
 # 必要なパッケージのインストールとNode.jsのバージョンを20に更新
 RUN apt-get update && apt-get install -y curl ca-certificates \
